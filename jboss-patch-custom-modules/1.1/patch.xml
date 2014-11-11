@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+
+<!-- Note the id, same as directory name -->
+<patch xmlns="urn:jboss:patch:1.0" id="patch-udm-configuration-1.1">
+    <description>
+        This patch updates user defined configuration module
+    </description>
+    <no-upgrade name="WildFly" version="9.0.0.Alpha1"/>
+
+    <misc-files>
+      <removed path="modules/net/arunoday/configuration/main/arunoday.properties" hash="5bb218f618e704dfcd83c5638e98c1d9d5ad4cde" in-runtime-use="true" />
+      <added path="modules/net/arunoday/configuration/main/arunoday.properties" hash="19d9f66e99ddeef869c065f7b4dd95edd484bcbf"/>
+    </misc-files>
+
+</patch>
