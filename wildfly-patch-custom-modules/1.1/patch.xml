@@ -8,8 +8,8 @@
     <no-upgrade name="WildFly" version="9.0.0.Alpha1"/>
 
     <misc-files>
-      <removed path="modules/net/arunoday/configuration/main/arunoday.properties" hash="5bb218f618e704dfcd83c5638e98c1d9d5ad4cde" in-runtime-use="true" />
-      <added path="modules/net/arunoday/configuration/main/arunoday.properties" hash="19d9f66e99ddeef869c065f7b4dd95edd484bcbf"/>
+      <removed path="modules/net/arunoday/configuration/main/arunoday.properties" hash="409ca4766fed3dc2370b9c5fa591cfc2a7fcf9de" />
+      <added path="modules/net/arunoday/configuration/main/arunoday.properties" hash="075822e4d66e0ef4685de45f9258712ab1f23b0e" />
     </misc-files>
 
 </patch>
