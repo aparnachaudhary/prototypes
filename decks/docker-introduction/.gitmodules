@@ -1,0 +1,15 @@
+[submodule "asciidoctor-backends"]
+	path = asciidoctor-backends
+	url = https://github.com/asciidoctor/asciidoctor-backends.git
+[submodule "src/main/slides/deckjs/deck.js"]
+	path = src/main/slides/deckjs/deck.js
+	url = git://github.com/imakewebthings/deck.js.git
+[submodule "src/main/slides/revealjs/reveal.js"]
+	path = src/main/slides/revealjs/reveal.js
+	url = git://github.com/hakimel/reveal.js.git
+[submodule "asciidoctor-reveal.js"]
+	path = asciidoctor-reveal.js
+	url = https://github.com/asciidoctor/asciidoctor-reveal.js
+[submodule "src/main/slides/dzslides/dzslides"]
+	path = src/main/slides/dzslides/dzslides
+	url = https://github.com/mojavelinux/dzslides.git
