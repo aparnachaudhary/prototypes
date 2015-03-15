@@ -1,5 +1,7 @@
 == JAX-RS with JPA
 
+Forked from https://github.com/javaee-samples/javaee7-samples/tree/master/jaxrs/db-access to use Postgres.
+
 === Install DataSource
 
 * Create module for Postgres Driver
@@ -22,4 +24,3 @@ mvn test -Parq-wildfly-remote
 
 To verify multi-threaded behavior of REST service, execute the attached JMeter script (JAXRS-JPA.jmx).
 
-Note: Forked from https://github.com/javaee-samples/javaee7-samples/tree/master/jaxrs/db-access
