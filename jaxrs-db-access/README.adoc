@@ -1,0 +1,23 @@
+== JAX-RS with JPA
+
+=== Install DataSource
+
+* Create module for Postgres Driver
+* Install postgres driver
+* Create datasource
+
+[source,bash]
+-------------
+sh $WILDFLY_HOME/bin/jboss-cli.sh --file=/Users/Aparna/Development/Projects/prototypes/jaxrs-db-access/add-datasource.cli
+-------------
+
+=== Execute test
+
+[source,bash]
+-------------
+mvn test -Parq-wildfly-remote
+-------------
+
+=== Execute JMeter Script
+
+To verify multi-threaded behavior of REST service, execute the attached JMeter script (JAXRS-JPA.jmx).
