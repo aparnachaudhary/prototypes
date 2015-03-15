@@ -1,6 +1,6 @@
 == JAX-RS with JPA
 
-Forked from https://github.com/javaee-samples/javaee7-samples/tree/master/jaxrs/db-access to use Postgres.
+Forked from https://github.com/javaee-samples/javaee7-samples/tree/master/jaxrs/db-access
 
 === Install DataSource
 
