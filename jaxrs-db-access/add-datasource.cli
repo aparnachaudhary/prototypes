@@ -1,0 +1,5 @@
+module add --name=org.postgres --resources=/Users/Aparna/Development/Tools/WildFly/postgresql-9.3-1103.jdbc41.jar --dependencies=javax.api,javax.transaction.api
+ 
+/subsystem=datasources/jdbc-driver=postgres:add(driver-name="postgres",driver-module-name="org.postgres",driver-class-name=org.postgresql.Driver)
+
+data-source add --name=myName --jndi-name=java:jboss/datasources/myDS --driver-name=postgres --user-name=postgres --password=postgres --use-java-context=true --use-ccm=true --min-pool-size=10 --max-pool-size=100 --transaction-isolation=TRANSACTION_READ_COMMITTED --pool-prefill=true --allocation-retry=1 --prepared-statements-cache-size=32 --share-prepared-statements=true --connection-url=jdbc:postgresql://localhost:5433/postgres --valid-connection-checker-class-name=org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLValidConnectionChecker --exception-sorter-class-name=org.jboss.jca.adapters.jdbc.extensions.postgres.PostgreSQLExceptionSorter
