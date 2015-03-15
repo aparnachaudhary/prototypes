@@ -8,7 +8,7 @@
 
 [source,bash]
 -------------
-sh $WILDFLY_HOME/bin/jboss-cli.sh --file=/Users/Aparna/Development/Projects/prototypes/jaxrs-db-access/add-datasource.cli
+sh $WILDFLY_HOME/bin/jboss-cli.sh --file=add-datasource.cli
 -------------
 
 === Execute test
