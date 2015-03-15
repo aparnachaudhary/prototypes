@@ -1,0 +1,21 @@
+
+== Start Postgres
+
+[source,bash]
+------------
+docker run --rm -p 5000:5432 -P --name pg_test eg_postgresql
+------------
+
+== Access Postgres
+
+[source,bash]
+------------
+psql -h 192.168.59.103 -p 5000 -d docker -U docker --password
+------------
+
+== WildFly DataSource
+
+[source,bash]
+------------
+data-source add --name=myName --jndi-name=java:jboss/datasources/myDS --driver-name=postgres --user-name=docker --password=docker --use-java-context=true --use-ccm=true --min-pool-size=10 --max-pool-size=100 --transaction-isolation=TRANSACTION_READ_COMMITTED --pool-prefill=true --allocation-retry=1 --prepared-statements-cache-size=32 --share-prepared-statements=true --connection-url=jdbc:postgresql://192.168.59.103:5000/docker    
+------------
