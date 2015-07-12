@@ -11,6 +11,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import java.util.List;
 
 @Path("employee")
 public class EmployeeResource {
@@ -22,7 +23,8 @@ public class EmployeeResource {
    @GET
    @Produces({ "application/xml", "application/json" })
    public Employee[] getList() {
-      return bean.getEmployees().toArray(new Employee[0]);
+      List<Employee> employees = bean.getEmployees();
+      return employees.toArray(new Employee[employees.size()]);
    }
 
    @GET
@@ -39,7 +41,6 @@ public class EmployeeResource {
    @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
    public void addToList(@FormParam("name") String name,
          @FormParam("age") int age) {
-      System.out.println("Creating a new item: " + name);
       bean.addEmployee(new Employee(name, age));
    }
 

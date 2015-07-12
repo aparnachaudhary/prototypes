@@ -52,7 +52,8 @@ public class EmployeeResourceTest {
     /**
      * Test of getList method, of class MyResource.
      */
-    @Test @InSequence(1)
+    @Test
+    @InSequence(1)
     public void testPostAndGet() {
         MultivaluedHashMap<String, String> map = new MultivaluedHashMap<>();
         map.add("name", "Penny");
@@ -85,7 +86,8 @@ public class EmployeeResourceTest {
     /**
      * Test of getPerson method, of class MyResource.
      */
-    @Test @InSequence(2)
+    @Test
+    @InSequence(2)
     public void testGetSingle() {
         Employee p = target
                 .path("{id}")
@@ -99,7 +101,8 @@ public class EmployeeResourceTest {
     /**
      * Test of putToList method, of class MyResource.
      */
-    @Test @InSequence(3)
+    @Test
+    @InSequence(3)
     public void testPut() {
         MultivaluedHashMap<String, String> map = new MultivaluedHashMap<>();
         map.add("name", "Howard");
@@ -116,7 +119,8 @@ public class EmployeeResourceTest {
     /**
      * Test of deleteFromList method, of class MyResource.
      */
-    @Test @InSequence(4)
+    @Test
+    @InSequence(4)
     public void testDelete() {
         target
                 .path("{name}")
@@ -127,28 +131,30 @@ public class EmployeeResourceTest {
         assertEquals(3, list.length);
     }
 
-    @Test @InSequence(5)
+    @Test
+    @InSequence(5)
     public void testClientSideNegotiation() {
         JsonArray json = target.request().accept(MediaType.APPLICATION_JSON).get(JsonArray.class);
         assertEquals(3, json.size());
-        for(int i = 0; i < json.size(); i++) {
-           JsonObject obj = json.getJsonObject(i);
-           String name = obj.getString("name");
-           int age = obj.getInt("age");
-           
-           if("Penny".equals(name)) {
-              assertEquals(1,  age);
-           } else if("Leonard".equals(name)) {
-              assertEquals(2,  age);
-           } else if("Sheldon".equals(name)) {
-              assertEquals(3,  age);
-           } else {
-              fail("Unknown Employee returned [" + name + ", " + age + "]");
-           }
+        for (int i = 0; i < json.size(); i++) {
+            JsonObject obj = json.getJsonObject(i);
+            String name = obj.getString("name");
+            int age = obj.getInt("age");
+
+            if ("Penny".equals(name)) {
+                assertEquals(1, age);
+            } else if ("Leonard".equals(name)) {
+                assertEquals(2, age);
+            } else if ("Sheldon".equals(name)) {
+                assertEquals(3, age);
+            } else {
+                fail("Unknown Employee returned [" + name + ", " + age + "]");
+            }
         }
     }
 
-    @Test @InSequence(6)
+    @Test
+    @InSequence(6)
     public void testDeleteAll() {
         Employee[] list = target.request().get(Employee[].class);
         for (Employee p : list) {
